@@ -37,6 +37,10 @@ h1 {
   margin: 0;
 }
 
+span {
+  display: block;
+}
+
 /* Grouping content
    ========================================================================== */
 /**
@@ -342,8 +346,8 @@ template {
 }
 
 body {
-  font-family: 'Outfit';
-  background-color: #FAFAFA;
+  font-family: 'Tahoma';
+  background-color: #20252E;
 }
 
 .container {
@@ -371,7 +375,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: #20252E;
   z-index: 4;
 }
 
@@ -409,7 +413,7 @@ img {
 }
 
 .header-link {
-  color: #1C1C1E;
+  color: #FFFFFF;
   font-size: 14px;
   text-decoration: none;
   font-weight: 400;
@@ -419,7 +423,7 @@ img {
 }
 
 .header-link:hover {
-  color: #FF3B30;
+  color: #4CC458;
 }
 
 .header-burger {
@@ -443,7 +447,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #F0F0F0;
+    background-color: #151920;
     z-index: 3;
     padding: 100px 0 0 0;
     -webkit-transition: 0.3s;
@@ -467,7 +471,7 @@ img {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     content: '';
-    background-color: #1C1C1E;
+    background-color: #4CC458;
     position: absolute;
     width: 100%;
     height: 2px;
@@ -482,7 +486,7 @@ img {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     position: absolute;
-    background-color: #1C1C1E;
+    background-color: #4CC458;
     left: 0;
     width: 100%;
     height: 2px;
@@ -634,21 +638,21 @@ img {
   }
 }
 
-.main-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  padding: 150px 16px;
+.main::before {
+  content: '';
+  background-color: rgba(69, 214, 74, 0.2);
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  opacity: 0.5;
+  z-index: -1;
 }
 
-.main-text {
+.main-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -656,73 +660,76 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 130px 16px;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-text {
+  z-index: 2;
 }
 
 .main-text__title {
-  max-width: 460px;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 60px;
-  line-height: 64px;
-  color: #FF3B30;
+  color: #FFFFFF;
 }
 
-.main-text__button {
-  margin-top: 55px;
+.main-text__subtitle {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 32px;
+  color: #707070;
+}
+
+.main-img {
+  margin-top: 24px;
+  width: 311px;
+}
+
+.main-img__pic {
   width: 100%;
+  -webkit-filter: drop-shadow(21px 11px 25px rgba(0, 0, 0, 0.49));
+          filter: drop-shadow(21px 11px 25px rgba(0, 0, 0, 0.49));
 }
 
-.main-content__img {
-  width: 560px;
+.main-btn {
+  margin-top: 70px;
 }
 
-@media (max-width: 1024px) {
-  .main-text__title {
-    width: 390px;
-    font-size: 50px;
-  }
-  .main-content__img {
-    width: 445px;
-  }
+.main-btn__img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .main-wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-  }
-  .main-text {
-    margin-top: 80px;
-  }
-  .main-text__button {
-    margin-top: 50px;
-  }
-  .main-content {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-  }
+.main-btn__img:hover {
+  -webkit-filter: drop-shadow(0px 16px 20px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 16px 20px rgba(0, 0, 0, 0.3));
 }
 
 @media (max-width: 425px) {
-  .main-wrap {
-    padding-bottom: 80px;
+  .main-text__title {
+    font-size: 42px;
   }
-  .main-text {
-    margin-top: 40px;
+  .main-text__subtitle {
+    font-size: 24px;
   }
+  .main-img {
+    width: 290px;
+  }
+}
+
+@media (max-width: 320px) {
   .main-text__title {
     font-size: 32px;
-    line-height: 32px;
   }
-  .main-text__button {
-    margin-top: 40px;
+  .main-text__subtitle {
+    font-size: 18px;
   }
-  .main-content__img {
-    width: 285px;
+  .main-btn {
+    margin-top: 50px;
   }
 }
 
