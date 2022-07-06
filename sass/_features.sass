@@ -1,78 +1,50 @@
 .features
     &-wrap
-        display: flex
-        flex-direction: row
         padding: 0px 16px
-        flex-wrap: wrap
-        align-items: center
-    &-title
-        flex-basis: 100%
-        margin-bottom: 55px
-        font-weight: 700
-        font-size: 60px
-        line-height: 64px
-        text-align: center
-        color: #FF3B30
-    &-content
-        flex-basis: 50%
-        &__img
-            width: 560px
-    &-text
         display: flex
         flex-direction: column
-        align-items: flex-end
-        flex-basis: 50%
-        &__items
-            max-width: 290px
-            margin-bottom: 32px
+    &-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        align-content: center
+        margin-bottom: 80px
+    &-text
+        max-width: 520px
         &__title
-            font-weight: 700
-            font-size: 24px
-            line-height: 26px
-            color: #1C1C1E
-            margin-bottom: 16px
+            font-weight: 800
+            font-size: 50px
+            color: #4CC458
         &__subtitle
+            margin-top: 16px
             font-weight: 400
-            font-size: 16px
-            line-height: 20px
-            color: rgba(60, 60, 67, 0.4)
+            font-size: 20px
+            color: #FFFFFF
+    &-content
+        width: 255px
+        &__img
+            width: 100%
+            filter: drop-shadow(21px 11px 25px rgba(0, 0, 0, 0.49))
 
 
-@media (max-width: 1024px)
-    .features
-        &-content
-            &__img
-                width: 445px
-        &-text
-            align-items: flex-end
+//@media (max-width: 1024px)
+
 
 @media (max-width: 768px)
     .features
-        &-title
-            font-weight: 700
-            font-size: 60px
-            line-height: 64px
-        &-content
-            flex-basis: 100%
-            text-align: center
         &-text
-            margin-top: 55px
-            flex-direction: column
-            flex-basis: 100%
-            text-align: center
-            align-items: center
+           flex-basis: 40%
 
 
 @media (max-width: 425px)
     .features
-        &-title
-            font-weight: 700
-            font-size: 32px
-            line-height: 40px
-            margin-bottom: 40px
-        &-content
-            &__img
-                width: 285px
+        &-item
+            flex-direction: column
+            text-align: center
         &-text
-            &__items
-                margin-bottom: 50px
+            margin-bottom: 32px
+            width: inherite
+            &__title
+                font-size: 28px
+        &-iphone
+            order: 2
