@@ -1,0 +1,107 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    height: 80px
+    width: 100%
+    z-index: 20
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: #ffffff
+        z-index: 4
+    &-wrap
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        min-height: 80px
+        padding: 0px 16px
+    &-logo
+        max-width: 48px
+        height: 48px
+    &-list
+        display: flex
+        position: relative
+        z-index: 4
+        li
+            list-style: none
+            margin-left: 40px
+    &-link
+        color: #1C1C1E
+        font-size: 14px
+        text-decoration: none
+        font-weight: 400
+        line-height: 16px
+        transition: 0.3s
+        &:hover
+            color: #FF3B30
+    &-burger
+        display: none
+    &-logo
+        z-index: 5
+
+
+@media (max-width: 768px)
+    body.lock
+        overflow: hidden
+    .header
+        &-wrap
+            min-height: 80px
+        &-menu
+            position: fixed
+            top: -120%
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #F0F0F0
+            z-index: 3
+            padding: 100px 0 0 0
+            transition: 0.3s
+        &-list
+            display: block
+            li
+                margin: 0
+                margin-bottom: 50px
+        &-burger
+            display: block
+            position: relative
+            width: 30px
+            height: 20px
+            z-index: 5
+            &::before, &::after
+                transition: 0.3s
+                content: ''
+                background-color: #1C1C1E
+                position: absolute
+                width: 100%
+                height: 2px
+            &::before
+                top: 0
+            &::after
+                bottom: 0
+            span
+                transition: 0.3s
+                position: absolute
+                background-color: #1C1C1E
+                left: 0
+                width: 100%
+                height: 2px
+                top: 9px
+
+.header-burger.active
+    &::before
+        transform: rotate(45deg)
+        top: 9px
+    &::after
+        transform: rotate(-45deg)
+        bottom: 9px
+    span
+        transform: scale(0)
+
+.header-menu.active
+    top: 0

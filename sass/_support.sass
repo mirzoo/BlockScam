@@ -1,0 +1,80 @@
+.support
+    &-wrap
+        display: flex
+        flex-direction: column
+        align-content: center
+        text-align: center
+        padding: 100px 10px
+    &-text
+        &__title
+            font-size: 70px
+            color: #FF3B30
+            font-weight: bold
+        &__subtitle
+            display: block
+            font-size: 22px
+            color: #FFFFFF
+            font-weight: normal
+            margin-top: 16px
+    &-form
+        &__wrap
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 60px
+        &__input
+            border-radius: 16px
+            border: none
+            background-color: #fadada
+            font-size: 18px
+            padding: 16px
+            width: 300px
+            margin-bottom: 24px
+        &__textarea
+            resize: none
+            border-radius: 16px
+            border: none
+            background-color: #fadada
+            font-size: 18px
+            padding: 16px
+            height: 250px
+            width: 300px
+            margin-bottom: 24px
+        &__button
+            border-radius: 16px
+            border: none
+            background-color: #FF3B30
+            font-size: 18px
+            padding: 16px
+            width: 300px
+            margin-bottom: 24px
+            transition: 0.3s
+            color: #ffffff
+            cursor: pointer
+            &:hover
+                box-shadow: 0px 8px 30px rgba(216, 29, 29, 0.2)
+
+.support-form__input._error
+    border: solid 1px #d42727
+    background-color: #eba5a5
+
+.support-form__textarea._error
+    border: solid 1px #d42727
+    background-color: #eba5a5
+
+
+
+@media (max-width: 320px)
+    .support
+        &-text
+            &__title
+                font-size: 40px
+            &__subtitle
+                font-size: 18px
+        &-form
+            &__input
+                width: 250px
+            &__textarea
+                width: 250px
+            &__button
+                width: 250px
